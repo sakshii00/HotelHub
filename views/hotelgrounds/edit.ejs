@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') %>
+<h1 class='text-center'> Update Hotel</h1>
+    <form action="/hotels/<%=h.id %>?_method=put" method="post" novalidate class="needs-validation">
+        <div>
+            <label for="title" class="form-label">Title</label> <br>
+            <input class="form-control" type="text" id="title" name="hotel[title]" value="<%= h.title %>"required > <br>
+            </div>
+            <div>
+            <label for="location" class="form-label">Location</label> <br>
+            <input class="form-control" type="text" id="location" name="hotel[location]" value="<%=h.location %>"required > <br>  </div>
+            
+            <div>
+                <label for="description" class="form-label">Description</label> <br>
+                <textarea class="form-control" type="text" id="description" name="hotel[description]" required ><%= h.description %></textarea> <br>
+
+                <div>
+                    <label for="price" class="form-label">Price</label> <br>
+                    <input min=0 class="form-control" type="number" step="any" id="price" name="hotel[price]" value="<%= h.price %>"required > <br>  </div>
+                    <div>
+            <label for="image" class="form-label">Image URL</label> <br>
+           <input class="form-control" type="url" id="image" name="hotel[image]" value="<%=h.image %>"> <br>  </div>
+
+            <button class="btn btn-primary">Update</button>
+    </form>
